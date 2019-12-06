@@ -4,21 +4,23 @@ import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
 
 const App = () => {
+  //this is user data
   const usersData = [
     {id: 1, name: 'Tania', username:'floppydiskette'},
     {id: 2, name: 'Jimmy', username:'jgam'},
     {id: 3, name: 'Bridget', username:'bridgetgam'},
   ]
 
-  const [users, setUsers] = useState(usersData)
+  const [users, setUsers] = useState(usersData)//useState returns [stateValue, function that sets the stateValue]
+  //special about hooks
 
   const addUser = user => {
     user.id = users.length + 1
-    setUsers([...users, user])
+    setUsers([...users, user])//takes in array [current values to be added new Value, new value]
   }
 
   const deleteUser = id => {
-    setUsers(users.filter(user => user.id !== id))
+    setUsers(users.filter(user => user.id !== id))//users filtering
   }
 
   const [editing, setEditing] = useState(false)
