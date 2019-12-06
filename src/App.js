@@ -2,6 +2,9 @@ import React, { useState} from 'react'
 import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
+import {Bootstrap, Grid, Row, Col} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const App = () => {
   //this is user data
@@ -15,6 +18,7 @@ const App = () => {
   //special about hooks
 
   const addUser = user => {
+    console.log(users);
     user.id = users.length + 1
     setUsers([...users, user])//takes in array [current values to be added new Value, new value]
   }
