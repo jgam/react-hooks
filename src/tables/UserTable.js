@@ -1,6 +1,17 @@
 import React from 'react'
+import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const UserTable = props => (
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossOrigin="anonymous"
+        />
+    </head>
     <table>
         <thead>
             <tr>
@@ -21,7 +32,7 @@ const UserTable = props => (
                                 props.editRow(user)
                             }}
                                 className="button muted-button">Edit</button>
-                            <button onClick={()=> props.deleteUser(user.id)} className="button muted-button">Delete</button>
+                            <button variant="primary" onClick={()=> props.deleteUser(user.id)} className="button muted-button">Delete</button>
                         </td>
                     </tr>
                 ))

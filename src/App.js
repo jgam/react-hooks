@@ -2,9 +2,9 @@ import React, { useState} from 'react'
 import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
-import {Bootstrap, Grid, Row, Col} from 'react-bootstrap'
+import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   //this is user data
@@ -47,6 +47,12 @@ const App = () => {
 
   return (
     <div className="container">
+      <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossOrigin="anonymous"
+/>
       <h1> CRUD App with Hooks</h1>
       <div className="flex-row">
         <div className="flex-large">
@@ -67,6 +73,9 @@ const App = () => {
             </div>
           )}
         </div>
+        <br></br>
+        <br></br>
+
         <div className="flex-large">
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow}/>
