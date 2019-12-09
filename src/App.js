@@ -87,7 +87,7 @@ const App = () => {
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
           { crudState ? (
-            <CrudForm editCrud={editCrud}/>
+            <CrudForm users={users}/>
           ) : (
             <div></div>
           )}
