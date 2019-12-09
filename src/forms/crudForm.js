@@ -3,14 +3,15 @@ import AddTodoForm from './AddTodoForm'
 
 const crudForm = props => {
     if(!props.currentUser.todos){props.currentUser.todos=[];}
-    const todoChanged = props =>{
+    const todoChanged = changed =>{
         //the state needs to be changed in order to display.
+        props.currentUser = changed;
     }
     console.log(props);
     return (//first with adding the to do
         <div>
             hello {props.currentUser.name}
-            <AddTodoForm user={props.currentUser} addTodo={props.addTodo} setTodoElement={props.setTodoElement}/>
+            <AddTodoForm user={props.currentUser} addTodo={props.addTodo} setTodoElement={props.setTodoElement} todoChanged={todoChanged}/>
             <table>
                 <thead>
                     <tr>

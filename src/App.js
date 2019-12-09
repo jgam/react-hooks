@@ -26,11 +26,12 @@ const App = () => {
     setUsers([...users, user])//takes in array [current values to be added new Value, new value]
   }
 
-  const addTodo = (user) => {
+  const addTodo = currentUser => {
     // with user ID, we check Todos.
     console.log('addTodo');
-    console.log(user);
-
+    console.log(currentUser);
+    //updateTodo(user);
+    setUsers(users.map(user => (user.id === currentUser.id ? currentUser : user)));
 
   }
 
@@ -56,6 +57,11 @@ const App = () => {
     setCurrentUser({id:user.id, name:user.name, username:user.username})
   }
 
+  /*
+  const updateTodo = (current) =>{
+    setUsers(users.map(user=>(user.id===current.id ? current : user)));
+  }
+*/
   const updateUser = (id, updatedUser) => {
     setEditing(false)
 
