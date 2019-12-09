@@ -27,7 +27,7 @@ const UserTable = props => (
                         <td>{user.name}</td>
                         <td>{user.username}</td>
                         <td>
-                            <Button >select</Button>
+                            <Button onClick={()=> props.editCrud()}>select</Button>
                             <Button onClick={()=>{
                                 props.editRow(user)
                             }}

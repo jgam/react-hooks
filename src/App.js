@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
-import crudForm from './forms/crudForm'
+import CrudForm from './forms/CrudForm'
 
 import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css';
@@ -40,6 +40,10 @@ const App = () => {
     setEditing(true)
 
     setCurrentUser({id:user.id, name:user.name, username:user.username})
+  }
+
+  const editCrud = user => {
+    setCrud(true);
   }
 
   const updateUser = (id, updatedUser) => {
@@ -81,9 +85,9 @@ const App = () => {
 
         <div className="flex-large">
           <h2>View users</h2>
-          <UserTable users={users} deleteUser={deleteUser} editRow={editRow}/>
+          <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
           { crudState ? (
-            <crudForm />
+            <CrudForm editCrud={editCrud}/>
           ) : (
             <div></div>
           )}
