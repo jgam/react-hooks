@@ -25,6 +25,14 @@ const App = () => {
     setUsers([...users, user])//takes in array [current values to be added new Value, new value]
   }
 
+  const addTodo = (user) => {
+    // with user ID, we check Todos.
+    console.log('addTodo');
+    console.log(user);
+
+
+  }
+
   const deleteUser = id => {
     setUsers(users.filter(user => user.id !== id))//users filteringg
   }
@@ -36,14 +44,15 @@ const App = () => {
 
   const [currentUser, setCurrentUser] = useState(initialFromState)
 
-  const editRow = user => {
+  const editRow = user => {//edit row
     setEditing(true)
 
     setCurrentUser({id:user.id, name:user.name, username:user.username})
   }
 
-  const editCrud = user => {
+  const editCrud = user => {//detecting user clicked select for CRUD
     setCrud(true);
+    setCurrentUser({id:user.id, name:user.name, username:user.username})
   }
 
   const updateUser = (id, updatedUser) => {
@@ -87,7 +96,7 @@ const App = () => {
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
           { crudState ? (
-            <CrudForm users={users}/>
+            <CrudForm currentUser={currentUser} addTodo={addTodo}/>
           ) : (
             <div></div>
           )}
