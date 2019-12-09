@@ -18,6 +18,7 @@ const App = () => {
 
   const [users, setUsers] = useState(usersData)//useState returns [stateValue, function that sets the stateValue]
   //special about hooks
+  const [todoElement, setTodoElement] = useState('');
 
   const addUser = user => {
     console.log(users);
@@ -96,7 +97,7 @@ const App = () => {
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
           { crudState ? (
-            <CrudForm currentUser={currentUser} addTodo={addTodo}/>
+            <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement}/>
           ) : (
             <div></div>
           )}
