@@ -4,14 +4,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const UserTable = props => (
-    <head>
+    <div>
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossOrigin="anonymous"
-        />
-    </head>
+            />
     <table>
         <thead>
             <tr>
@@ -28,11 +27,14 @@ const UserTable = props => (
                         <td>{user.name}</td>
                         <td>{user.username}</td>
                         <td>
-                            <button onClick={()=>{
+                            <Button >select</Button>
+                            <Button onClick={()=>{
                                 props.editRow(user)
                             }}
-                                className="button muted-button">Edit</button>
-                            <button variant="primary" onClick={()=> props.deleteUser(user.id)} className="button muted-button">Delete</button>
+                                className="button muted-button">Edit</Button>
+
+                            <Button variant="danger" onClick={()=> props.deleteUser(user.id)} className="button muted-button">Delete</Button>
+                            
                         </td>
                     </tr>
                 ))
@@ -43,6 +45,7 @@ const UserTable = props => (
             )}
         </tbody>
     </table>
+    </div>
 )
 
 export default UserTable

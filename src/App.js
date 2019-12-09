@@ -2,6 +2,8 @@ import React, { useState} from 'react'
 import UserTable from './tables/UserTable'
 import AddUserForm from './forms/AddUserForm'
 import EditUserForm from './forms/EditUserForm'
+import crudForm from './forms/crudForm'
+
 import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,6 +30,7 @@ const App = () => {
   }
 
   const [editing, setEditing] = useState(false)
+  const [crudState, setCrud] = useState(false)
 
   const initialFromState = {id: null, name:'', username:''}
 
@@ -79,6 +82,11 @@ const App = () => {
         <div className="flex-large">
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow}/>
+          { crudState ? (
+            <crudForm />
+          ) : (
+            <div></div>
+          )}
         </div>
       </div>
     </div>
