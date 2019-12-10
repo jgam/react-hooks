@@ -18,11 +18,11 @@ const AddTodoForm = props => {
                 console.log('on submit', todoElement, "here");
                 event.preventDefault()//prevent from default submitting the form
 
-                props.user.todos.push(todoElement);
+                props.user.todos.push(todoElement);//update current prop
                 
-                props.addTodo(props.user);
+                props.addTodo(props.user);//change the state
                 
-                setTodoElement('');
+                setTodoElement('');//reset the TodoElement
                 
             }}>
             <label>Todo!</label>
