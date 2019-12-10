@@ -8,7 +8,7 @@ import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import MyComponent from '@rakuten-rex/react-component-starter-kit';
+import MyComponent from '@rakuten-rex/react-component-starter-kit';//this is REX requirement component.
 
 const App = () => {
   //this is user data
