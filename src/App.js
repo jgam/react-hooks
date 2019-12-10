@@ -66,16 +66,13 @@ const App = () => {
 */
   const updateUser = (id, updatedUser) => {
     setEditing(false)
-
     setUsers(users.map(user => (user.id === id ? updatedUser : user)))
   }
 
-  const doneTodo = (currentUser, currentAction) => {
-    console.log("doneTodo");
-    console.log(currentUser);
-    const newTodos = currentUser.todos.filter(item => item !== currentAction)
-    currentUser.todos = newTodos;
-    setUsers(users.map(user => (user.id === currentUser.id ? currentUser : user)));
+  const doneTodo = (currentUser, currentAction) => {//deletes todo based on currentAction
+    const newTodos = currentUser.todos.filter(item => item !== currentAction)//filtering todos
+    currentUser.todos = newTodos;//assign new todos to original todos
+    setUsers(users.map(user => (user.id === currentUser.id ? currentUser : user)));//set states to get a new render
   }
 
   return (
