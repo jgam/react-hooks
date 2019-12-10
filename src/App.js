@@ -8,6 +8,8 @@ import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import MyComponent from '@rakuten-rex/react-component-starter-kit';
+
 const App = () => {
   //this is user data
   const usersData = [
@@ -68,6 +70,14 @@ const App = () => {
     setUsers(users.map(user => (user.id === id ? updatedUser : user)))
   }
 
+  const doneTodo = (currentUser, currentAction) => {
+    console.log("doneTodo");
+    console.log(currentUser);
+    const newTodos = currentUser.todos.filter(item => item !== currentAction)
+    currentUser.todos = newTodos;
+    setUsers(users.map(user => (user.id === currentUser.id ? currentUser : user)));
+  }
+
   return (
     <div className="container">
       <link
@@ -103,12 +113,13 @@ const App = () => {
           <h2>View users</h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
           { crudState ? (
-            <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement}/>
+            <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement} doneTodo={doneTodo}/>
           ) : (
             <div></div>
           )}
         </div>
       </div>
+      <MyComponent />
     </div>
   )
 }
