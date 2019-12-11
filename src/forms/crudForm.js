@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import AddTodoForm from './AddTodoForm'
 import {Bootstrap, Grid, Row, Col, Button} from 'react-bootstrap'
 
+import 'rex-core';
+import Table from 'rex-table';
+
 
 const crudForm = props => {
     if(!props.currentUser.todos){props.currentUser.todos=[];}
@@ -20,30 +23,32 @@ const crudForm = props => {
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossOrigin="anonymous"
             />
-            <table>
-                <thead>
-                    <tr>
-                        <th>Todo list</th>
-                        <th>Check</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {props.currentUser.todos.length > 0 ? (
-                        props.currentUser.todos.map(todo =>(
-                            <tr >
-                                <td>{todo}</td>
-                                <td><Button onClick={()=>props.doneTodo(props.currentUser, todo)}>Done</Button></td>
-                            </tr>
-                            )
-                        )
-                    ):(
+            <div classs="table table-striped">
+                <Table class="table">
+                    <thead>
                         <tr>
-                            <td>No activity</td>
+                            <th>Todo list</th>
+                            <th>Check</th>
                         </tr>
-                    )}
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+                        {props.currentUser.todos.length > 0 ? (
+                            props.currentUser.todos.map(todo =>(
+                                <tr>
+                                    <td>{todo}</td>
+                                    <td><Button onClick={()=>props.doneTodo(props.currentUser, todo)}>Done</Button></td>
+                                </tr>
+                                )
+                            )
+                        ):(
+                            <tr>
+                                <td>No activity</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
+            </div>
         </div>
     )
 }

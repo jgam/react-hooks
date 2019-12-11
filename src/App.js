@@ -9,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MyComponent from '@rakuten-rex/react-component-starter-kit';//this is REX requirement component.
+import './App.css'
+import RexComponent from '@rakuten-rex/button';
 
 const App = () => {
   //this is user data
@@ -59,11 +61,6 @@ const App = () => {
     setCurrentUser({id:user.id, name:user.name, username:user.username})
   }
 
-  /*
-  const updateTodo = (current) =>{
-    setUsers(users.map(user=>(user.id===current.id ? current : user)));
-  }
-*/
   const updateUser = (id, updatedUser) => {
     setEditing(false)
     setUsers(users.map(user => (user.id === id ? updatedUser : user)))
@@ -76,47 +73,92 @@ const App = () => {
   }
 
   return (
-    <div className="container">
-      <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  crossOrigin="anonymous"
-/>
-      <h1> CRUD App with Hooks</h1>
-      <div className="flex-row">
-        <div className="flex-large">
-        {editing ? (
-            <div>
-              <h2>Edit user</h2>
-              <EditUserForm
-                editing={editing}
-                setEditing={setEditing}
-                currentUser={currentUser}
-                updateUser={updateUser}
-              />
-            </div>
-                ) : (
-            <div>
-              <h2>Adddd user</h2>
-              <AddUserForm addUser={addUser} />
-            </div>
-          )}
-        </div>
-        <br></br>
-        <br></br>
+    <div className="wrap">
+      <head>
+        <title>Rakuten Portal</title>
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossOrigin="anonymous"
+        />
+        
+      </head>
 
-        <div className="flex-large">
-          <h2>View users</h2>
-          <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
-          { crudState ? (
-            <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement} doneTodo={doneTodo}/>
-          ) : (
-            <div></div>
-          )}
+      <body>
+        <h1> REACT App HOOKS + REDUX</h1>
+        <div id = "wrap">
+          <div id="header" role="header">
+            <div class="container">
+              <div class="header">
+                <div class="header-menu">
+                  <a href="https://google.com">Sign up</a>
+                  <a href="https://naver.com">Login</a>
+                </div>
+
+                <div class="header-tit">
+                  <h1>Rakuten IOT Portal</h1><br></br>
+                  <a href="https://google.com">Rakuten ID</a>
+                </div>
+
+                <div class="header-icon">
+                  <a href="#" class="icon1"><span class="ir_pm">icon1</span></a>
+                  <a href="#" class="icon2"><span class="ir_pm">icon2</span></a>
+                  <a href="#" class="icon3"><span class="ir_pm">icon3</span></a>
+                  <a href="#" class="icon4"><span class="ir_pm">icon4</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="nav">Nav</div>
+          <div id="side">
+            <div className="flex-large">
+              {editing ? (
+                  <div>
+                    <h2>Edit user</h2>
+                    <EditUserForm
+                      editing={editing}
+                      setEditing={setEditing}
+                      currentUser={currentUser}
+                      updateUser={updateUser}
+                    />
+                  </div>
+                      ) : (
+                  <div>
+                    <h2>Adddd user</h2>
+                    <AddUserForm addUser={addUser} />
+                  </div>
+                )}
+              </div>
+          </div>
+          <div id="contents">
+            <div className="flex-row">
+              
+              <br></br>
+              <br></br>
+
+              <div className="flex-large">
+                <h2>View users</h2>
+                <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
+                <br></br>
+                <br></br>
+                <br></br>
+
+                { crudState ? (
+                  <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement} doneTodo={doneTodo}/>
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            </div>
+            <MyComponent />
+          </div>
+
+          <div id="footer">Footer</div>
         </div>
-      </div>
-      <MyComponent />
+        
+      </body>
+      <RexComponent>hello World</RexComponent>
     </div>
   )
 }
