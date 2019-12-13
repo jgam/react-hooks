@@ -98,10 +98,10 @@ const App = () => {
                 
 
                 <div class="header-icon">
-                  <a href="#" class="icon1"><span class="ir_pm">icon1</span></a>
-                  <a href="#" class="icon2"><span class="ir_pm">icon2</span></a>
-                  <a href="#" class="icon3"><span class="ir_pm">icon3</span></a>
-                  <a href="#" class="icon4"><span class="ir_pm">icon4</span></a>
+                  <a href="#" class="icon1"><span class="ir_pm">Home</span></a>
+                  <a href="#" class="icon2"><span class="ir_pm">MyPage</span></a>
+                  <a href="#" class="icon3"><span class="ir_pm">Shop</span></a>
+                  <a href="#" class="icon4"><span class="ir_pm">MyCart</span></a>
                 </div>
 
                 <div class="header-tit">
@@ -169,9 +169,35 @@ const App = () => {
             
             
           </div>
-
-          <div id="footer">Footer
+          <div id="section">
+            section
+          </div>
+          <div id="footer">
+            <div class="footer-content">
+              <dl class="copyArea">
+                <dt>
+                  this is img
+                </dt>
+                <dd class="footer-words">
             
+                      [<a>Terms & Conditions</a> | 
+
+                      <a>in nihongo</a>]
+                  
+                 
+                      [<a>Privacy Policy</a>  | 
+                   
+                      <a> in nihongo</a>]
+
+
+                    
+                  
+                </dd>
+
+              </dl>
+            </div>
+            <p class="copyright"> Copyright © 2019 Rakuten Mobile. All Rights Reserved.</p>
+
           </div>
         </div>
         

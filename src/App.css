@@ -1,11 +1,12 @@
 /* 레이아웃 id*/
 #wrap {width: 100%; }
-#header {width: 100%; height: 20%; background: rgb(175, 174, 174); }
-#contents {width: 100%; height: 70%; background: rgb(247, 242, 242); display: flex; }
-#footer {width: 100%; height: 10%; background: #111;}
+#header {width: 100%; height: 20%; background: #E6E6E6; }
+#contents {width: 100%; height: 70%; background: rgb(248, 248, 248); display: flex; }
+#section {width: 100%; height: 10%; background: #E6E6E6;}
+#footer {background: #D9D9D9;}
 
 
-.container {max-width: 100% !important; height: inherit; background: rgba(255,255,255,0.3); padding-right:0px !important; padding-left:0px !important;}
+.container {max-width: 100% !important; height: inherit; background: rgba(240, 237, 237, 0.849); padding-right:0px !important; padding-left:0px !important;}
 
 
 /* 헤더  class*/
@@ -13,15 +14,15 @@
 
 
 .header .header-menu {text-align: right; height: 80px; width: inherit;}
-.header .header-menu a {color: #fff; padding: 10px 0px 10px 13px; display: inline-block;}
+.header .header-menu a {color: #5D5C5C; padding: 10px 0px 10px 13px; display: inline-block;}
 .header .header-menu a:hover {color: #666;}
 
 .header .header-icon {padding-left:10%;height: 50%;text-align: left;background: #5D5C5C} 
 .header .header-icon a {width: 50px; height: 50px; display: inline-block; margin: 0 3px;}
-.header .header-icon a.icon1 {background-position: 0px 0px;background: url(img/rakuten/homeOUttline.png);}
-.header .header-icon a.icon2 {background-position: 0px -60px;background: url(img/rakuten/homeOutline.png);}
-.header .header-icon a.icon3 {background-position: 0px -120px;background: url(img/rakuten/homeOutline.png);}
-.header .header-icon a.icon4 {background-position: 0px -180px;background: url(img/rakuten/homeOutline.png);}
+.header .header-icon a.icon1 {background-position: 0px 0px;background: url(img/rakuten/homeOutline.png);}
+.header .header-icon a.icon2 {background-position: 0px -60px;background: url(img/rakuten/myPageOutline.png);}
+.header .header-icon a.icon3 {background-position: 0px -120px;background: url(img/rakuten/shopOutline.png);}
+.header .header-icon a.icon4 {background-position: 0px -180px;background: url(img/rakuten/shoppingcardOutline.png);}
 
 .header .header-tit {text-align: center; }
 .header .header-tit h1 {color: #fff; background-color: #4aa8d4; display: inline-block; font-size: 28px; padding: 5px 20px 6px 20px; margin-top: 3%; font-weight: normal; text-transform: uppercase;}
@@ -32,6 +33,32 @@
     max-width: 30%;
     margin: 10px 10px 10px 10px;
 }
-.card .card-body p.icon1{
+
+.card .card-body .card-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.card .card-body img.icon1{
     background: url(img/rakuten/Dashboardoutline.png)
+}
+
+/* section */
+
+/* footer */
+.footer-content{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.footer-content .copyArea{
+    display: flex;
+}
+
+.footer-content .copyArea .footer-words{
+}
+
+.footer-content .copyArea .copyright{
+    display: inline !important;
 }
