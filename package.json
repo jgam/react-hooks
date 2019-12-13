@@ -10,6 +10,7 @@
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
+    "rex-card": "^1.5.1",
     "rex-core": "^1.4.0",
     "rex-table": "^1.2.0"
   },

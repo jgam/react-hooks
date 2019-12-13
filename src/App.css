@@ -1,25 +1,34 @@
-
-
 /* 레이아웃 id*/
 #wrap {width: 100%; }
-#header {width: 100%; height: 20%; background: #2698cb; }
-#contents {width: 100%; height: 70%; background: #fff;}
+#header {width: 100%; height: 20%; background: rgb(175, 174, 174); }
+#contents {width: 100%; height: 70%; background: rgb(247, 242, 242); display: flex; }
 #footer {width: 100%; height: 10%; background: #111;}
 
 
-.container {width: 100%; margin: 0 auto; height: inherit; background: rgba(255,255,255,0.3);}
+.container {max-width: 100% !important; height: inherit; background: rgba(255,255,255,0.3); padding-right:0px !important; padding-left:0px !important;}
 
 
 /* 헤더  class*/
-.header .header-menu {text-align: right; }
+.wrap {}
+
+
+.header .header-menu {text-align: right; height: 80px; width: inherit;}
 .header .header-menu a {color: #fff; padding: 10px 0px 10px 13px; display: inline-block;}
 .header .header-menu a:hover {color: #666;}
-.header .header-tit {text-align: center; }
-.header .header-tit h1 {color: #fff; background-color: #4aa8d4; display: inline-block; font-size: 28px; padding: 5px 20px 6px 20px; margin-top: 3%; font-weight: normal; text-transform: uppercase;}
-.header .header-tit a {display: inline-block; background-color: #2698cb; font-size: 18px; color:#fff; padding: 5px 20px 6px 20px; margin-top: -5px;}
-.header .header-icon {text-align: center; margin-top: 10px;} 
+
+.header .header-icon {padding-left:10%;height: 50%;text-align: left;background: #5D5C5C} 
 .header .header-icon a {width: 50px; height: 50px; display: inline-block; margin: 0 3px;}
 .header .header-icon a.icon1 {background-position: 0px 0px;background: url(img/rakuten/homeOUttline.png);}
 .header .header-icon a.icon2 {background-position: 0px -60px;background: url(img/rakuten/homeOutline.png);}
 .header .header-icon a.icon3 {background-position: 0px -120px;background: url(img/rakuten/homeOutline.png);}
 .header .header-icon a.icon4 {background-position: 0px -180px;background: url(img/rakuten/homeOutline.png);}
+
+.header .header-tit {text-align: center; }
+.header .header-tit h1 {color: #fff; background-color: #4aa8d4; display: inline-block; font-size: 28px; padding: 5px 20px 6px 20px; margin-top: 3%; font-weight: normal; text-transform: uppercase;}
+.header .header-tit a {display: inline-block; background-color: #2698cb; font-size: 18px; color:#fff; padding: 5px 20px 6px 20px; margin-top: -5px;}
+
+/* cards css*/
+.card {
+    max-width: 30%;
+    margin: 10px 10px 10px 10px;
+}

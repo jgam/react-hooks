@@ -9,8 +9,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import MyComponent from '@rakuten-rex/react-component-starter-kit';//this is REX requirement component.
-import './App.css'
 import RexComponent from '@rakuten-rex/button';
+import 'rex-core';
+import {Card} from 'rex-card';
+import './reset.css'
+import './App.css'
 
 const App = () => {
   //this is user data
@@ -76,17 +79,13 @@ const App = () => {
     <div className="wrap">
       <head>
         <title>Rakuten Portal</title>
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossOrigin="anonymous"
-        />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
         
+         
       </head>
 
       <body>
-        <h1> REACT App HOOKS + REDUX</h1>
         <div id = "wrap">
           <div id="header" role="header">
             <div class="container">
@@ -96,10 +95,7 @@ const App = () => {
                   <a href="https://naver.com">Login</a>
                 </div>
 
-                <div class="header-tit">
-                  <h1>Rakuten IOT Portal</h1><br></br>
-                  <a href="https://google.com">Rakuten ID</a>
-                </div>
+                
 
                 <div class="header-icon">
                   <a href="#" class="icon1"><span class="ir_pm">icon1</span></a>
@@ -107,10 +103,14 @@ const App = () => {
                   <a href="#" class="icon3"><span class="ir_pm">icon3</span></a>
                   <a href="#" class="icon4"><span class="ir_pm">icon4</span></a>
                 </div>
+
+                <div class="header-tit">
+                  <h1>Rakuten IOT Portal Image</h1><br></br>
+                  <a href="https://google.com">Rakuten ID: this is subtitle</a>
+                </div>
               </div>
             </div>
           </div>
-          <div id="nav">Nav</div>
           <div id="side">
             <div className="flex-large">
               {editing ? (
@@ -132,29 +132,59 @@ const App = () => {
               </div>
           </div>
           <div id="contents">
-            <div className="flex-row">
-              
-              <br></br>
-              <br></br>
-
-              <div className="flex-large">
-                <h2>View users</h2>
-                <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
-                <br></br>
-                <br></br>
-                <br></br>
-
-                { crudState ? (
-                  <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement} doneTodo={doneTodo}/>
-                ) : (
-                  <div></div>
-                )}
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Panel title</h5>
+                <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                <a class="card-link">Card link</a>
+                <a class="card-link">Another link</a>
               </div>
             </div>
-            <MyComponent />
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Panel title</h5>
+                <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                <a class="card-link">Card link</a>
+                <a class="card-link">Another link</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Panel title</h5>
+                <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                <a class="card-link">Card link</a>
+                <a class="card-link">Another link</a>
+              </div>
+            </div>
+
+            
+            
           </div>
 
-          <div id="footer">Footer</div>
+          <div id="footer">Footer
+            <div className="flex-row">
+                
+                <br></br>
+                <br></br>
+
+                <div className="flex-large">
+                  <h2>View users</h2>
+                  <UserTable users={users} deleteUser={deleteUser} editRow={editRow} editCrud={editCrud}/>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+
+                  { crudState ? (
+                    <CrudForm currentUser={currentUser} addTodo={addTodo} setTodoELement={setTodoElement} doneTodo={doneTodo}/>
+                  ) : (
+                    <div></div>
+                  )}
+                </div>
+              </div>
+            <MyComponent />
+          </div>
         </div>
         
       </body>
