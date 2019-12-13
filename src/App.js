@@ -134,8 +134,9 @@ const App = () => {
           <div id="contents">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Panel title</h5>
-                <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                <h5 class="card-title">Rakuten IoT Dashboard</h5>
+                <p class="card-text">Rakuten Dashboard provides the "best" quality for IoT with our amazing 5G network</p>
+                <img class="icon1" src="img/rakuten/Dashboardoutline.png" />
                 <a class="card-link">Card link</a>
                 <a class="card-link">Another link</a>
               </div>
@@ -143,8 +144,11 @@ const App = () => {
 
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Panel title</h5>
-                <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                <h5 class="card-title">Rakuten Home IoT solutions</h5>
+                <p class="card-text">Currently, Hiro and Young are working on this to deliver the best product ever encountered in life!</p>
+                <p>
+                  <img src=""></img>
+                </p>
                 <a class="card-link">Card link</a>
                 <a class="card-link">Another link</a>
               </div>
@@ -152,8 +156,11 @@ const App = () => {
 
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Panel title</h5>
-                <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+                <h5 class="card-title">Rakuten IoT Smart Wearables</h5>
+                <p class="card-text">Smart wearables will caculate every chocolate piece you eat and make you regret.</p>
+                <p>
+                  <img src=""></img>
+                </p>
                 <a class="card-link">Card link</a>
                 <a class="card-link">Another link</a>
               </div>
@@ -164,7 +171,13 @@ const App = () => {
           </div>
 
           <div id="footer">Footer
-            <div className="flex-row">
+            
+          </div>
+        </div>
+        
+      </body>
+      <RexComponent>hello World</RexComponent>
+      <div className="flex-row">
                 
                 <br></br>
                 <br></br>
@@ -184,11 +197,6 @@ const App = () => {
                 </div>
               </div>
             <MyComponent />
-          </div>
-        </div>
-        
-      </body>
-      <RexComponent>hello World</RexComponent>
     </div>
   )
 }
